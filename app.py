@@ -22,7 +22,7 @@ def proxy():
         if request.method == 'POST':
             response = requests.post(url, headers=headers, json=body, proxies=proxy)
         elif request.method == 'GET':
-            response = requests.get(url, headers=headers, proxies=proxy)
+            response = requests.get(url, headers=headers, params=body, proxies=proxy)
 
         # Return the status code and the body of the response from the target API
         return jsonify({
